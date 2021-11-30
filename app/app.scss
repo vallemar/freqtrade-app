@@ -1,0 +1,144 @@
+@tailwind components;
+@tailwind utilities;
+
+.ns-root {
+  --bg-white: white;
+  --bg-dark: #1a222c;
+  --bg-color: #f4f6ff;
+  --bg-secondary: white;
+  --up: #16c784;
+  --down: #ea3943;
+  --color-text: #1a222c;
+  --color-text-secondary: #959fa7;
+  --color-primary: #3861fb;
+  --warning: #881d22;
+}
+
+.ns-dark {
+  --bg-color: #20222e;
+  --bg-secondary: #323546;
+  --color-text: white;
+  --color-text-secondary: #58595d;
+}
+
+.fab {
+  font-family: "Font Awesome 5 Brands", "fa-brands-400";
+  font-weight: 400;
+}
+
+.fas {
+  font-family: "Font Awesome 5 Free", "fa-solid-900";
+  font-weight: 900;
+  font-size: 22;
+}
+
+.far {
+  font-family: "Font Awesome 5 Free", "fa-regular-400";
+  font-weight: 400;
+}
+
+Page,
+MDTabContentItem {
+  background-color: var(--bg-color);
+}
+
+label,
+Button {
+  color: var(--color-text);
+}
+
+.bg {
+  background-color: var(--bg-color);
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-white {
+  background-color: var(--bg-white);
+}
+
+.bg-dark {
+  background-color: var(--bg-dark);
+}
+
+.secondary,
+Image.fas,
+Image.far {
+  color: var(--color-text-secondary);
+}
+
+/*
+.ns-dark {
+  Page, MDTabContentItem {
+    background-color: $bg-color-dark;
+  }
+
+  .bg {
+    background-color: $bg-color-dark;
+  }
+
+  label, Button {
+    color: $color-text-dark;
+  }
+
+  .bg-secondary {
+    background-color: $bg-secondary-dark;
+
+  }
+
+  .secondary, Image.fas, Image.far {
+    color: $color-text-secondary;
+  }
+}*/
+
+label.up {
+  color: var(--up);
+}
+
+label.down {
+  color: var(--down);
+}
+
+label.warning,
+.warning {
+  color: var(--warning);
+}
+
+label.primary,
+.primary {
+  color: var(--color-primary);
+}
+
+.text-white {
+  color: var(--bg-white);
+}
+
+.text-dark {
+  color: var(--bg-dark);
+}
+
+.bg-up {
+  background-color: var(--up);
+}
+
+.bg-down {
+  background-color: var(--down);
+}
+
+.bg-warning {
+  background-color: var(--warning);
+}
+
+.outline {
+  border: 1 solid red;
+}
+
+.border-color-primary {
+  border-color: var(--color-primary);
+}

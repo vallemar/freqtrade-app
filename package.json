@@ -1,0 +1,57 @@
+{
+  "name": "com.vallemar.freqtrade",
+  "main": "app/app.ts",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "prettier": "npx prettier --write .",
+    "android": "ns debug android --no-hmr",
+    "android-debug": "ns debug android --no-hmr --debug-brk",
+    "ios": "ns debug ios --no-hmr",
+    "ios-debug": "ns debug ios --no-hmr --debug-brk"
+  },
+  "dependencies": {
+    "@nativescript-community/ui-chart": "^1.2.13",
+    "@nativescript-community/ui-collectionview": "^4.0.48",
+    "@nativescript-community/ui-material-bottom-navigation": "^6.2.4",
+    "@nativescript-community/ui-pulltorefresh": "^2.5.0",
+    "@nativescript/core": "~8.1.1",
+    "@nativescript/tailwind": "^1.0.0-rc.1",
+    "@triniwiz/nativescript-toasty": "^4.1.3",
+    "axios": "^0.24.0",
+    "nativescript-vue": "~2.9.0",
+    "nativescript-vue-navigator": "^1.2.0",
+    "tailwindcss": "^2.2.19"
+  },
+  "devDependencies": {
+    "@nativescript/android": "8.1.1",
+    "@nativescript/ios": "8.1.0",
+    "@nativescript/types": "~8.1.1",
+    "@nativescript/webpack": "~5.0.0",
+    "@types/node": "~14.6.2",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^8.3.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.1.1",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2",
+    "nativescript-vue-template-compiler": "~2.9.0",
+    "prettier": "^2.4.1",
+    "pretty-quick": "^3.1.2",
+    "typescript": "~4.3.5",
+    "vue": "~2.6.12"
+  },
+  "lint-staged": {
+    "*.{js,json,css,scss,html,md,vue,ts}": [
+      "npx prettier --write .",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && pretty-quick --staged"
+    }
+  }
+}

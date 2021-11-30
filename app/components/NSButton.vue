@@ -1,0 +1,71 @@
+<template>
+  <AbsoluteLayout @tap="!disabled ? $emit('tap') : ''">
+    <FlexboxLayout
+      :disabled="disabled"
+      :class="[background]"
+      style="border-radius: 50; justify-content: center; align-items: center"
+      :height="height"
+      :width="width"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Label
+        v-if="!loading"
+        :text="text"
+        :style="{ 'font-size': fontSize }"
+        :class="[textColorClass]"
+      ></Label>
+      <Loading
+        v-else
+        :loading="loading"
+        size="30"
+        :white="loadingWhite"
+        :black="loadingBlack"
+      >
+      </Loading>
+    </FlexboxLayout>
+  </AbsoluteLayout>
+</template>
+
+<script>
+import Loading from "~/components/Loading";
+
+export default {
+  name: "NSButton",
+  components: { Loading },
+  props: {
+    text: String,
+    loading: Boolean,
+    disabled: Boolean,
+    height: {
+      type: String,
+      default: "48",
+    },
+    width: {
+      type: String,
+      default: "100%",
+    },
+    fontSize: {
+      type: String,
+      default: "18",
+    },
+    primary: {
+      type: Boolean,
+      default: true,
+    },
+    textColorClass: {
+      type: String,
+      default: "text-white",
+    },
+    loadingWhite: Boolean,
+    loadingBlack: Boolean,
+  },
+  computed: {
+    background() {
+      return this.primary ? "bg-primary" : "";
+    },
+  },
+};
+</script>
+
+<style></style>
