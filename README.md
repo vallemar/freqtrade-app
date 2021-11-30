@@ -16,6 +16,9 @@ with [NativeScript](http://www.nativescript.org)/Nativescript-Vue
 - Total balance.
 - Manage servers. The application supports multiple bots.
 
+
+![img_readme.png](img_readme.png)
+
 ## Contribute
 
 Anyone can contribute to this project. All you have to do is the following:
