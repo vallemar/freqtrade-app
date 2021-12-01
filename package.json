@@ -1,5 +1,5 @@
 {
-  "name": "com.vallemar.freqtrade-test",
+  "name": "com.vallemar.freqtrade",
   "main": "app/app.ts",
   "version": "1.0.0",
   "private": true,
