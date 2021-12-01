@@ -69,12 +69,10 @@ services:
 - Stable application on iOS. 🔨
 - Publish base APP on Play Store (Android). 🔨
 - Publish base APP on Apple Store (iOS). 🔨
+- 🏁 Start/Stop/StopBuy bot.
+- 🔎 View config/whitelist/blacklist Bot.
 - 💸 Implement Forcesell.
 - 📱 Widget for Android.
 - 📈 Screen Trade.
 - 🔥 Backend/APP integration with Firebase.
 - 🧑🏽‍🤝‍🧑🏽 ... Ideas to contribute 🚀
-
-## License
-
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/NativeScript/NativeScript/blob/master/LICENSE)
