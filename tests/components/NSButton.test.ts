@@ -16,7 +16,7 @@ afterEach(() => {
   wrapper.destroy();
 });
 
-describe("NSButton", () => {
+describe("NSButton.vue", () => {
   it("is a Vue instance", () => {
     expect(wrapper.html()).toBeTruthy();
   });
@@ -40,9 +40,9 @@ describe("NSButton", () => {
     it("should not emit the tap event when it is disabled", async () => {
       //given
       const button = wrapper.find("#ns-button");
-      await wrapper.setProps({ disabled: true });
 
       //when
+      await wrapper.setProps({ disabled: true });
       button.trigger("tap");
 
       //then

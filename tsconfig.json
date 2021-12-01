@@ -5,7 +5,6 @@
     "module": "esnext",
     "moduleResolution": "node",
     "lib": ["dom", "es2017"],
-    "allowJs": true,
     "sourceMap": true,
     "noEmitHelpers": true,
     "importHelpers": true,
@@ -15,8 +14,7 @@
       "~/*": ["app/*"],
       "@/*": ["app/*"]
     },
-
-    "types": ["jest","node"],
+    "types": ["jest","node", "jest-when"],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,

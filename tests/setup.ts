@@ -1,6 +1,10 @@
 import Vue from "vue";
-import { config } from "@vue/test-utils";
 
+/* MOCK Vue & Nativescript */
+jest.mock("nativescript-vue", () => Vue);
+jest.mock("@nativescript/core", () => {});
+
+/* MOCK Nativescript Component */
 const NSElements = [
   "ActionBar",
   "ActionItem",
@@ -17,12 +21,6 @@ const NSElements = [
   "TextField",
 ];
 
-/* MOCK VUE */
-jest.mock("nativescript-vue", () => Vue);
-
 NSElements.forEach((ele) => {
   Vue.config.ignoredElements.push(ele);
-  /*  config.stubs[ele] = {
-    template: "</div>",
-  };*/
 });
