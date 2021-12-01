@@ -221,6 +221,6 @@ export interface Token {
     u: string;
   };
   exp: number;
-  iat: string;
+  iat: number;
   type: "access" | "refresh";
 }
