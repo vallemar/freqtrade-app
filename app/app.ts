@@ -19,8 +19,7 @@ if (isAndroid) {
 }
 
 /* CONFIG NS-VUE */
-declare let __DEV__: boolean;
-Vue.config.silent = !__DEV__;
+Vue.config.silent = false;
 Vue.config.suppressRenderLogs = true;
 
 /* REGISTER ELEMENTS */

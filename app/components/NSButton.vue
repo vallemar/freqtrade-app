@@ -1,5 +1,5 @@
 <template>
-  <AbsoluteLayout @tap="!disabled ? $emit('tap') : ''">
+  <AbsoluteLayout id="ns-button" @tap="!disabled ? $emit('tap') : ''">
     <FlexboxLayout
       :disabled="disabled"
       :class="[background]"
@@ -26,11 +26,11 @@
     </FlexboxLayout>
   </AbsoluteLayout>
 </template>
+<script lang="ts">
+import Vue from "nativescript-vue";
+import Loading from "~/components/Loading.vue";
 
-<script>
-import Loading from "~/components/Loading";
-
-export default {
+export default Vue.extend({
   name: "NSButton",
   components: { Loading },
   props: {
@@ -65,7 +65,7 @@ export default {
       return this.primary ? "bg-primary" : "";
     },
   },
-};
+});
 </script>
 
 <style></style>
