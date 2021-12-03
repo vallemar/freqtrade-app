@@ -23,7 +23,7 @@
           src="https://www.freqtrade.io/en/stable/images/logo.png"
         ></Image>
         <StackLayout class="w-full mt-8" :class="{ ios: isIOS }">
-          <TextField v-model="user" hint="Usuario" class="mt-2" />
+          <TextField v-model="user" hint="User" class="mt-2" />
           <TextField v-model="password" hint="Password" class="mt-2" />
           <TextField
             v-model="directionServer"
