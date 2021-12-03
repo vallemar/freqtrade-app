@@ -4,6 +4,12 @@
       :disabled="disabled"
       :class="[background]"
       style="border-radius: 50; justify-content: center; align-items: center"
+      :style="{
+        'padding-left': px,
+        'padding-right': px,
+        'padding-top': py,
+        'padding-bottom': py,
+      }"
       :height="height"
       :width="width"
       justifyContent="center"
@@ -56,6 +62,14 @@ export default Vue.extend({
     textColorClass: {
       type: String,
       default: "text-white",
+    },
+    px: {
+      type: String,
+      default: "0",
+    },
+    py: {
+      type: String,
+      default: "0",
     },
     loadingWhite: Boolean,
     loadingBlack: Boolean,

@@ -19,6 +19,7 @@ yarn-error.log*
 .project
 tmp/
 typings/
+publish/android/security
 
 # Visual Studio Code
 .vscode/*

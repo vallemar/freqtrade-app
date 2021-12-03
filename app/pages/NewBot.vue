@@ -23,7 +23,7 @@
           src="https://www.freqtrade.io/en/stable/images/logo.png"
         ></Image>
         <StackLayout class="w-full mt-8" :class="{ ios: isIOS }">
-          <TextField v-model="user" hint="Usuario" class="mt-2" />
+          <TextField v-model="user" hint="User" class="mt-2" />
           <TextField v-model="password" hint="Password" class="mt-2" />
           <TextField
             v-model="directionServer"
@@ -35,8 +35,22 @@
             hint="Name Bot (Not required)"
             class="mt-2"
           />
+          <FlexboxLayout justifyContent="flex-end">
+            <NSButton
+              width="auto"
+              height="auto"
+              @tap="applyExampleServer"
+              text="Apply server example"
+              bgClass="bg-primary"
+              class="mt-4"
+              px="12"
+              py="10"
+              fontSize="15"
+            ></NSButton>
+          </FlexboxLayout>
         </StackLayout>
       </StackLayout>
+
       <NSButton
         :loading="loading"
         loading-white
@@ -75,6 +89,12 @@ export enum TypeNewBot {
   Edit,
 }
 
+const remoteServerExample = {
+  user: "freqtrader",
+  password: "123456",
+  directionServer: "http://example.freqtrade.jmarvall.com:8080",
+};
+
 export default Vue.extend({
   components: { Loading, NSButton },
   props: {
@@ -86,11 +106,9 @@ export default Vue.extend({
   },
   data() {
     return {
-      user: this.botServer ? this.botServer.user : "freqtrader",
-      password: "123456",
-      directionServer: this.botServer
-        ? this.botServer.directionServer
-        : "http://example.freqtrade.jmarvall.com:8080",
+      user: this.botServer ? this.botServer.user : "",
+      password: "",
+      directionServer: this.botServer ? this.botServer.directionServer : "",
       botName: this.botServer ? this.botServer.botName : "",
       loading: false,
       typeNewBot: TypeNewBot,
@@ -98,11 +116,16 @@ export default Vue.extend({
     };
   },
   computed: {
-    disabled(): boolean {
-      return !!!(this.user && this.password && this.directionServer);
+    disabled() {
+      return !(this.user && this.password && this.directionServer);
     },
   },
   methods: {
+    applyExampleServer() {
+      this.user = remoteServerExample.user;
+      this.password = remoteServerExample.password;
+      this.directionServer = remoteServerExample.directionServer;
+    },
     login(): void {
       this.loading = true;
 
