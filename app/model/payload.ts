@@ -147,6 +147,57 @@ export interface Trades {
   total_trades: number;
 }
 
+export interface AskStrategy {
+  price_side: string;
+  use_order_book: boolean;
+  order_book_top: number;
+}
+
+export interface CheckDepthOfMarket {
+  enabled: boolean;
+  bids_to_ask_delta: number;
+}
+
+export interface BidStrategy {
+  price_side: string;
+  ask_last_balance: number;
+  use_order_book: boolean;
+  order_book_top: number;
+  check_depth_of_market: CheckDepthOfMarket;
+}
+
+enum BotStatusType {
+  Stopped = "stopped",
+  Running = "running",
+  ReloadConfig = "reload_config",
+}
+export interface BotStatus {
+  dry_run: boolean;
+  stake_currency: string;
+  stake_amount: number;
+  available_capital?: any;
+  stake_currency_decimals: number;
+  max_open_trades: number;
+  minimal_roi: object;
+  stoploss: number;
+  trailing_stop: boolean;
+  trailing_stop_positive: number;
+  trailing_stop_positive_offset: number;
+  trailing_only_offset_is_reached: boolean;
+  use_custom_stoploss: boolean;
+  timeframe: string;
+  timeframe_ms: number;
+  timeframe_min: number;
+  exchange: string;
+  strategy: string;
+  forcebuy_enabled: boolean;
+  ask_strategy: AskStrategy;
+  bid_strategy: BidStrategy;
+  bot_name: string;
+  state: BotStatusType;
+  runmode: string;
+}
+
 /* FOR component responses */
 export interface Trade {
   trade_id: number;

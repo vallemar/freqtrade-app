@@ -1,5 +1,7 @@
 <template>
-  <Navigator :defaultRoute="isLoggedIn ? '/' : '/new_bot'" />
+  <!--  <Navigator :defaultRoute="isLoggedIn ? '/' : '/new_bot'" />-->
+
+  <Navigator :defaultRoute="isLoggedIn ? '/bot_details' : '/bot_details'" />
 </template>
 
 <script>

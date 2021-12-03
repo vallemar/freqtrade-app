@@ -69,7 +69,7 @@
                 style="font-size: 20"
               ></Label>
               <Label
-                @tap="editBot(item)"
+                @tap="botDetails"
                 text.decode="&#xf044;"
                 class="far ml-7"
                 style="font-size: 20"
@@ -249,9 +249,15 @@ export default Vue.extend({
     newBot(): void {
       this.$navigator.navigate("/new_bot", { type: TypeNewBot.Add });
     },
-    editBot(botServer: BotServer): void {
-      this.$navigator.navigate("/new_bot", {
-        props: { type: TypeNewBot.Edit, botServer: botServer },
+
+    botDetails(botServer: BotServer): void {
+      this.$navigator.navigate("/bot_details", {
+        props: { botServer: botServer },
+        transition: {
+          name: "slide",
+          duration: 150,
+          curve: "linear",
+        },
       });
     },
     checkConnections() {
