@@ -5,7 +5,10 @@
       :class="[background]"
       style="border-radius: 50; justify-content: center; align-items: center"
       :style="{
-        padding: `${py} ${px}`,
+        'padding-left': px,
+        'padding-right': px,
+        'padding-top': py,
+        'padding-bottom': py,
       }"
       :height="height"
       :width="width"

@@ -39,7 +39,6 @@
             <NSButton
               width="auto"
               height="auto"
-              loading-white
               @tap="applyExampleServer"
               text="Apply server example"
               bgClass="bg-primary"
@@ -117,8 +116,8 @@ export default Vue.extend({
     };
   },
   computed: {
-    disabled(): boolean {
-      return !!!(this.user && this.password && this.directionServer);
+    disabled() {
+      return !(this.user && this.password && this.directionServer);
     },
   },
   methods: {
